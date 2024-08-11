@@ -1,3 +1,6 @@
 [submodule "libaribb25"]
 	path = build/mirakc/libaribb25
 	url = https://github.com/tsukumijima/libaribb25.git
+[submodule "sqlite3-pcre"]
+	path = build/epgstation/sqlite3-pcre
+	url = https://github.com/ralight/sqlite3-pcre.git
