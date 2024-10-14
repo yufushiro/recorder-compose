@@ -1,6 +1,6 @@
 # syntax=docker.io/docker/dockerfile:1
 
-ARG BASE_IMAGE=docker.io/mirakc/mirakc:3.1.4-alpine
+ARG BASE_IMAGE=docker.io/mirakc/mirakc:3.2.9-alpine
 
 FROM $BASE_IMAGE AS b25-build
 
