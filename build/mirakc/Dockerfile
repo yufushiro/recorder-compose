@@ -1,6 +1,6 @@
 # syntax=docker.io/docker/dockerfile:1
 
-ARG BASE_IMAGE=docker.io/mirakc/mirakc:3.4.4-alpine
+ARG BASE_IMAGE=docker.io/mirakc/mirakc:3.4.75-alpine
 
 FROM $BASE_IMAGE AS b25-build
 
@@ -14,7 +14,11 @@ RUN --mount=type=bind,source=./libaribb25,target=/tmp/libaribb25/src \
 
 FROM $BASE_IMAGE
 COPY --from=b25-build /opt/libaribb25 /usr/local/
-RUN apk add --no-cache ccid pcsc-lite-libs
+RUN apk add --no-cache \
+  ccid \
+  pcsc-lite-libs \
+  libstdc++ \
+  ;
 
 ENTRYPOINT []
 CMD ["/bin/sh", "-c", "pcscd && /usr/local/bin/mirakc"]
