@@ -21,4 +21,4 @@ RUN apk add --no-cache \
   ;
 
 ENTRYPOINT []
-CMD ["/bin/sh", "-c", "pcscd && /usr/local/bin/mirakc"]
+CMD ["/bin/sh", "-c", "pcscd -f & /usr/local/bin/mirakc"]
